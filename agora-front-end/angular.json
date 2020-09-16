@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "agora-front-end"
+    }
+  },
+  "defaultProject": "agora-front-end",
+  "cli": {
+    "analytics": "2de09ffd-af29-4933-ad96-b0a613a6f61c"
+  }
 }
