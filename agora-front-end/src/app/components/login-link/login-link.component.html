@@ -6,10 +6,10 @@
     </button>
   </div> -->
   <div class="modal-body">
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <button type="button" class="close no-border" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
-    <h1>Login</h1>
+    <!-- <h1>Login</h1>
         <form>
         <div class="form-group">
           <label for="exampleInputEmail1">Username</label>
@@ -20,7 +20,8 @@
           <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="password">
         </div>
         <button class="btn rounded-0 btn-outline-dark" (click)="submitForm()">Login</button>
-      </form>
+      </form> -->
+      <app-login-modal></app-login-modal>
       <!-- <button type="button" id="toggleButton" class="btn secondary-button-color rounded-0" (click)='toggle()'> New User? </button> -->
   </div>
   <!-- <div class="modal-footer">

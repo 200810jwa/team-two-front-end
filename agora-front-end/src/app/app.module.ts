@@ -13,6 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginLinkComponent } from './components/login-link/login-link.component';
 import { SignupLinkComponent } from './components/signup-link/signup-link.component';
+import { LoginModalComponent } from './components/login-modal/login-modal.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SignupLinkComponent } from './components/signup-link/signup-link.compon
     DashboardComponent,
     NavbarComponent,
     LoginLinkComponent,
-    SignupLinkComponent
+    SignupLinkComponent,
+    LoginModalComponent
   ],
   imports: [
     BrowserModule,

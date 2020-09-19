@@ -1,0 +1,10 @@
+<div class="container">
+    <div [ngSwitch]="message">
+        <div *ngSwitchCase="'Registration'">
+            <app-registration></app-registration>
+        </div>
+        <div *ngSwitchCase="'Login'">
+            <app-login></app-login>
+        </div>
+    </div>
+</div>
