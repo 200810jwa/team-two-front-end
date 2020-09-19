@@ -9,6 +9,10 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginLinkComponent } from './components/login-link/login-link.component';
+import { SignupLinkComponent } from './components/signup-link/signup-link.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,17 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     LandingPageComponent,
     LoginComponent,
     RegistrationComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent,
+    LoginLinkComponent,
+    SignupLinkComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,52 @@
+<ng-template #content let-modal>
+  <!-- <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div> -->
+    <div class="modal-body">
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h1>Registration</h1>
+      <form>
+        <div class="form-row">
+            <div class="col-sm-6">
+                <input class="form-control" type="text" placeholder="First Name" name="firstname" [(ngModel)]="firstname" > 
+            </div>
+            <div class="col-sm-6">
+                <input class="form-control" type="text" placeholder="Last Name" [(ngModel)]="lastname" name="lastname">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-sm-12">
+                <input class="form-control" type="text" placeholder="Username" [(ngModel)]="username" name="username">
+                </div>
+    
+        </div>
+        <div class="form-row">
+            <div class="col-sm-12">
+                <input class="form-control" type="password" placeholder="Password" [(ngModel)]="password" name="password">
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="col-sm-12">
+                <input class="form-control" type="text" placeholder="Email" [(ngModel)]="email" name="email">
+            </div>
+        </div>
+    </form>
+    <!-- <div>
+        <button type="button" class="toggleButton" class="btn secondary-button-color rounded-0" (click)='toggle()'>Already have Account? </button>
+    </div> -->
+    <div>
+        <button type="button" class="btn rounded-0 btn-outline-dark"(click)="submitForm()">Register</button>
+    </div>
+      <!-- <button type="button" id="toggleButton" class="btn secondary-button-color rounded-0" (click)='toggle()'> New User? </button> -->
+  </div>
+  <!-- <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div> -->
+</ng-template>
+<h5 class="float-right ml-3 cursor-pointer" (click)='open(content)'>Sign Up</h5>
