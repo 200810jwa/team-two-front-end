@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../../models/User';
+import { ToggleService } from 'src/app/services/toggle.service';
 
 
 
@@ -16,7 +17,7 @@ export class RegistrationComponent implements OnInit {
   public lastname: string;
   public username: string;
   public password: string;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toggler: ToggleService) { }
 
   ngOnInit(): void {
   }
@@ -38,5 +39,7 @@ export class RegistrationComponent implements OnInit {
       console.log(error);
     }
   }
-
+  toggle(): void {
+    this.toggler.changeMessage('Login');
+  }
 }
