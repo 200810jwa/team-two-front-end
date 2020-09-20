@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginLinkComponent } from './components/login-link/login-link.component';
 import { SignupLinkComponent } from './components/signup-link/signup-link.component';
 import { LoginModalComponent } from './components/login-modal/login-modal.component';
+import { ArticleListComponent } from './components/article-list/article-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoginModalComponent } from './components/login-modal/login-modal.compon
     NavbarComponent,
     LoginLinkComponent,
     SignupLinkComponent,
-    LoginModalComponent
+    LoginModalComponent,
+    ArticleListComponent
   ],
   imports: [
     BrowserModule,
