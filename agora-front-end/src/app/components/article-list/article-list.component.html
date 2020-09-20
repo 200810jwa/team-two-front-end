@@ -1,6 +1,6 @@
 <div>
-    <div *ngFor="let article of articleList">
-        <a class="custom-link" href={{article.url}}>
+    <!-- <div *ngFor="let article of articleList">
+        <a class="custom-link custom-container" href={{article.url}} >
         <div class="card custom-card">
             <img class="card-img-top" src={{article.urlToImage}}>
             <div class="card-body">
@@ -9,5 +9,50 @@
             </div>
         </div>
         </a>
+    </div> -->
+    <div *ngIf="articlesRecieved">
+        <div class="wrapper">
+            <div class="left">
+                <div class="card custom-card">
+                    <img class="card-img-top" src={{largeLeft.urlToImage}}>
+                    <div class="card-body">
+                        <h3 class="card-title small-title">{{largeLeft.title.split(' - ')[0]}}</h3>
+                        <p class="card-text small-text">{{largeLeft.description}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-wrapper">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h3 class="card-title">{{middleTop.title.split(' - ')[0]}}</h3>
+                        <p class="card-text">{{middleTop.description}}</p>
+                    </div>
+                </div>
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h3 class="card-title">{{middleMiddle.title.split(' - ')[0]}}</h3>
+                        <p class="card-text">{{middleMiddle.description}}</p>
+                    </div>
+                </div>
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h3 class="card-title">{{middleBottom.title.split(' - ')[0]}}</h3>
+                        <p class="card-text">{{middleBottom.description}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="card custom-card">
+                    <img class="card-img-top" src={{largeRight.urlToImage}}>
+                    <div class="card-body">
+                        <h3 class="card-title small-title">{{largeRight.title.split(' - ')[0]}}</h3>
+                        <p class="card-text small-text">{{largeRight.description}}</p>
+                    </div>
+                </div>
+            </div>
     </div>
+    
+    </div>
+    
 </div>
+

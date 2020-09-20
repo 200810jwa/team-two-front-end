@@ -19,17 +19,7 @@ export class LandingPageComponent implements OnInit {
   ngOnInit(): void {
     this.toggler.currentMessage.subscribe((message) => this.message = message);
     this.toggler.antiMessage.subscribe((antiMessage) => this.anti_message = antiMessage);
-
-    this.fetchTopStories();
-
+  }
   }
 
 
-  async fetchTopStories() {
-    this.topStoriesResponse = await this.http.get<TopHeadlinesResponse>("http://newsapi.org/v2/top-headlines?country=us&apiKey=23db91fce4114ad381a0c3c8589a1b92").toPromise();
-
-    console.log(this.topStoriesResponse.totalResults);
-    console.log(this.topStoriesResponse.articles);
-  }
-
-}

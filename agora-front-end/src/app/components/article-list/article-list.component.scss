@@ -1,8 +1,37 @@
-.custom-card {
-    width: 75%;
-    margin-top: 4%;
-}
 
+.custom-card {
+    border: none;
+}
 .custom-link {
     color: black;
 }
+
+.custom-container {
+    display: flex;
+    // justify-content: center;
+}
+
+.wrapper {
+    display: grid;
+    // margin-top: 5%;
+    margin-bottom: 100px;
+    grid-gap: 5%;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.inner-wrapper {
+    display: grid;
+    grid-template: 1fr;
+
+}
+
+.small-title {
+    font-size: 14pt;
+    font-weight: 700;
+}
+
+.small-text {
+    font-size: 10pt;
+}
+

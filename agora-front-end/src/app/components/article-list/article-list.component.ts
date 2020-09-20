@@ -11,16 +11,33 @@ import { TopHeadlinesResponse } from 'src/app/models/top-headlines-response';
 export class ArticleListComponent implements OnInit {
 
   articleList: Article[];
+  largeLeft: Article;
+  middleTop: Article;
+  middleMiddle: Article;
+  middleBottom: Article;
+  largeRight: Article;
   topStoriesResponse: TopHeadlinesResponse;
+  articlesRecieved: boolean = false;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.fetchTopStories();
+    this.fetchTopStories().then(() => {
+      this.articlesRecieved = true;
+    }
+    );
   }
 
   async fetchTopStories() {
     this.topStoriesResponse = await this.http.get<TopHeadlinesResponse>("http://newsapi.org/v2/top-headlines?country=us&apiKey=23db91fce4114ad381a0c3c8589a1b92").toPromise();
-    this.articleList = this.topStoriesResponse.articles;
+    this.articleList = this.topStoriesResponse.articles.filter((e) => {
+      return e.description !== '';
+    });
+
+    this.largeLeft = this.articleList[0];
+    this.middleTop = this.articleList[1];
+    this.middleMiddle = this.articleList[2];
+    this.middleBottom = this.articleList[3];
+    this.largeRight = this.articleList[4];
   }
 }
