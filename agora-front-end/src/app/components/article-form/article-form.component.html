@@ -2,12 +2,11 @@
     <!-- <label for="article-image" class="custom-image-upload"><fa-icon [icon]="plusSquare"></fa-icon></label> -->
     
     <div contentEditable="true" class="title-input text-cursor" placeholder="Title" name="title" type="text"
-      [textContent]="title">
+      [(contenteditableModel)]="publish.title">
 
     </div>
-
     <div contentEditable="true" placeholder="Description" class="description-input text-cursor"  name="description" type="text"
-      [textContent]="description">
+    [(contenteditableModel)]="publish.description">
     </div>
 
     <label for="article-image" class="custom-image-upload">
@@ -16,7 +15,7 @@
   <input class="image-input" name="image" [(ngModel)]="image" id="article-image" type="file"/>
 
     <div contenteditable="true" placeholder="Lorem ipsum dolor..."class="content-input text-cursor"  name="content" type="text"
-      [textContent]="content">
+    [(contenteditableModel)]="publish.content">
     </div>
 
 

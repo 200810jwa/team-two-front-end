@@ -148,5 +148,6 @@
   },
   "rulesDirectory": [
     "codelyzer"
-  ]
+  ],
+  "use-host-property-decorator": false,
 }

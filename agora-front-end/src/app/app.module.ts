@@ -18,6 +18,7 @@ import { ArticleListComponent } from './components/article-list/article-list.com
 import { ArticleFormComponent } from './components/article-form/article-form.component';
 import { PublishPageComponent } from './pages/publish-page/publish-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ContentEditableDirective } from './directives/content-editable.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     LoginModalComponent,
     ArticleListComponent,
     ArticleFormComponent,
-    PublishPageComponent
+    PublishPageComponent,
+    ContentEditableDirective
   ],
   imports: [
     BrowserModule,

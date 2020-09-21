@@ -9,7 +9,11 @@ import {faPlusSquare} from '@fortawesome/free-solid-svg-icons';
 export class ArticleFormComponent implements OnInit {
 
   plusSquare = faPlusSquare;
-
+  publish = {
+    title: "",
+    description: "",
+    content: ""
+  }
   image: File;
   title: string;
   description: string;
@@ -22,7 +26,7 @@ export class ArticleFormComponent implements OnInit {
 
 
   logger(){
-    console.log(this.title);
+    console.log(this.publish);
   }
 
 }
