@@ -15,6 +15,9 @@ import { LoginLinkComponent } from './components/login-link/login-link.component
 import { SignupLinkComponent } from './components/signup-link/signup-link.component';
 import { LoginModalComponent } from './components/login-modal/login-modal.component';
 import { ArticleListComponent } from './components/article-list/article-list.component';
+import { ArticleFormComponent } from './components/article-form/article-form.component';
+import { PublishPageComponent } from './pages/publish-page/publish-page.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -27,14 +30,17 @@ import { ArticleListComponent } from './components/article-list/article-list.com
     LoginLinkComponent,
     SignupLinkComponent,
     LoginModalComponent,
-    ArticleListComponent
+    ArticleListComponent,
+    ArticleFormComponent,
+    PublishPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
