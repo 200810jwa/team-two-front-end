@@ -149,5 +149,5 @@
   "rulesDirectory": [
     "codelyzer"
   ],
-  "use-host-property-decorator": false,
+  "use-host-property-decorator": false
 }

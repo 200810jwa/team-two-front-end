@@ -12,12 +12,15 @@ export class ArticleFormComponent implements OnInit {
   publish = {
     title: "",
     description: "",
-    content: ""
+    content: "",
+    image: null,
   }
+  image_set = false;
   image: File;
   title: string;
   description: string;
   content: string;
+  message;
 
   constructor() { }
 
@@ -69,4 +72,26 @@ export class ArticleFormComponent implements OnInit {
   //     }
   //  }
 
+  handleFileInput(files: FileList){
+    if (files.length === 0) {
+      return;
+    }
+
+    var mimeType = files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.message = "Only images are supported.";
+      return;
+    }
+    const reader = new FileReader();
+    reader.readAsDataURL(files[0]);
+    reader.onload = (event) => {
+      this.publish.image = reader.result;
+    };
+    this.image_set = true;
+  }
+
+
+  remove_image() {
+    this.publish.image = null;
+  }
 }
