@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {faPlusSquare} from '@fortawesome/free-solid-svg-icons';
+import { Article } from 'src/app/models/Article';
 
 @Component({
   selector: 'app-article-form',
@@ -10,10 +12,14 @@ export class ArticleFormComponent implements OnInit {
 
   plusSquare = faPlusSquare;
   publish = {
+    user: null,
     title: "",
     description: "",
-    content: "",
     image: null,
+    publishedAt: null,
+    content: "",
+    status: null,
+
   }
   image_set = false;
   image: File;
@@ -22,12 +28,43 @@ export class ArticleFormComponent implements OnInit {
   content: string;
   message;
 
-  constructor() { }
+  imageData;
+  byteArray = [];
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
+  constructSixtyFourBit(file: File) {
+    const fileReader = new FileReader();
+    let imgData = this.imageData; 
+    if(file) {
+      fileReader.readAsArrayBuffer(file);
+      fileReader.onload = () => {
+            imgData = fileReader.result;
+            // console.log(imgData);
+            const arr = new Uint8Array(imgData);
+            console.log(arr);
+            for (let i = 0; i < arr.length; i++) {
+              if (arr[i]){
+              this.byteArray.push(arr[i]);
+            }
+          }
+            console.log(this.byteArray);
+        };
+      }
+    }
 
+
+    async sendImage() {
+      this.publish.user = sessionStorage.getItem("CurrentUser");
+      this.publish.image = this.byteArray;
+      this.publish.publishedAt = Date();
+      this.publish.status = 2;
+      // let response = await this.http.post<Article>("localhost:8080/article", this.publish).toPromise();
+
+    }
   logger(){
     console.log(this.publish);
   }
@@ -82,16 +119,21 @@ export class ArticleFormComponent implements OnInit {
       this.message = "Only images are supported.";
       return;
     }
+    
     const reader = new FileReader();
     reader.readAsDataURL(files[0]);
     reader.onload = (event) => {
       this.publish.image = reader.result;
     };
+
+    this.constructSixtyFourBit(files[0]);
     this.image_set = true;
   }
 
 
   remove_image() {
     this.publish.image = null;
+    this.byteArray = [];
+    this.imageData = null;
   }
 }

@@ -31,7 +31,7 @@ export class ArticleListComponent implements OnInit {
   async fetchTopStories() {
     this.topStoriesResponse = await this.http.get<TopHeadlinesResponse>("http://newsapi.org/v2/top-headlines?country=us&apiKey=23db91fce4114ad381a0c3c8589a1b92").toPromise();
     this.articleList = this.topStoriesResponse.articles.filter((e) => {
-      return e.description !== '';
+      return e.description !== '' && e.urlToImage !== null;
     });
 
     this.largeLeft = this.articleList[0];

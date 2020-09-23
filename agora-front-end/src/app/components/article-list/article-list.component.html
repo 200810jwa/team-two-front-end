@@ -10,7 +10,7 @@
         </div>
         </a>
     </div> -->
-    <div *ngIf="articlesRecieved">
+    <!-- <div *ngIf="articlesRecieved">
         <div class="wrapper">
             <div class="left">
                 <div class="card custom-card">
@@ -50,8 +50,72 @@
                     </div>
                 </div>
             </div>
-    </div>
-    
+        </div>
+    </div> -->
+    <div *ngIf="articlesRecieved">
+        <div class="wrapper">
+            <a class="black-text" href={{largeLeft.url}}>
+                <div class="left">
+                    <div class="card custom-card">
+                        <img class="card-img-top" src={{largeLeft.urlToImage}}>
+                        <div class="card-body">
+                            <h3 class="card-title small-title">{{largeLeft.title.split(' - ')[0]}}</h3>
+                            <p class="card-text small-text">{{largeLeft.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="inner-wrapper">
+                <a class="black-text" href={{middleTop.url}}>
+                    <div class="card custom-card">
+                    <div class="row card-body">
+                        <div class="col-sm-7">
+                            <h3 class="card-title small-title">{{middleTop.title.split(' - ')[0].substring(0, 30)}}...</h3>
+                            <p class="card-text small-text">{{middleTop.description.substring(0, 50)}}...</p>
+                        </div>
+                        <img class="col-sm-5 cover_img" src={{middleTop.urlToImage}}>
+                    </div>
+                </div>
+                </a>
+                <a class="black-text" href={{middleMiddle.url}}>
+                    <div class="card custom-card">
+                        <div class="row card-body">
+                            <div class="col-sm-7">
+                                <h3 class="card-title small-title">{{middleMiddle.title.split(' - ')[0].substring(0, 30)}}...</h3>
+                                <p class="card-text small-text">{{middleMiddle.description.substring(0, 50)}}...</p>
+                            </div>
+                            <img class="col-sm-5 cover_img" src={{middleMiddle.urlToImage}}>
+                        </div>
+                    </div>
+                </a>
+                <a class="black-text" href={{middleBottom.url}}>
+                    <div class="card custom-card">
+                        <div class="row card-body">
+                            <div class="col-sm-7">
+                                <h3 class="card-title small-title">{{middleBottom.title.split(' - ')[0].substring(0, 30)}}...</h3>
+                                <p class="card-text small-text">{{middleBottom.description.substring(0, 50)}}...</p>
+                            </div>
+                            <img class="col-sm-5 cover_img" src={{middleBottom.urlToImage}}>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+            <div class="right">
+                <a class="black-text" href={{largeRight.url}}>
+                    <div class="card custom-card">
+                        <img class="card-img-top" src={{largeRight.urlToImage}}>
+                        <div class="card-body">
+                            <h3 class="card-title small-title">{{largeRight.title.split(' - ')[0]}}</h3>
+                            <p class="card-text small-text">{{largeRight.description}}</p>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+        <hr/>
     </div>
     
 </div>
