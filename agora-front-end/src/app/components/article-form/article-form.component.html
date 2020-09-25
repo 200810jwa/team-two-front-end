@@ -9,24 +9,23 @@
     [(contenteditableModel)]="publish.description">
     </div>
 
-    <div *ngIf="publish.image == null">
+    <div *ngIf="displayImage == null">
       <label for="article-image" class="custom-image-upload">
         <div class="circle">+</div>
       </label>
       <input class="image-input" name="image"  (change)="handleFileInput($event.target.files)"  id="article-image" type="file"/>
-
-     
     </div>
+
+
     <div>
-      <div *ngIf="publish.image != null">
+      <div *ngIf="displayImage != null">
         <div class="circle neg-marg-left" (click)="remove_image()">-</div>
-        <img class="img-fluid" [src]="publish.image"/>
+        <img class="img-fluid" [src]="displayImage"/>
       </div>
     </div>
 
 
-    <div contenteditable="true" placeholder="Lorem ipsum dolor..."class="content-input text-cursor"  name="content" type="text"
-    [(contenteditableModel)]="publish.content">
+    <div contenteditable="true" placeholder="Lorem ipsum dolor..."class="content-input text-cursor"  name="content" type="text" [(contenteditableModel)]="publish.content">
     </div>
 
     <div *ngIf="imageReceived == true">

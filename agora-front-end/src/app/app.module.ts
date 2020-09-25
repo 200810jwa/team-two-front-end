@@ -21,6 +21,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ContentEditableDirective } from './directives/content-editable.directive';
 import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { DisplayArticleComponent } from './components/display-article/display-article.component';
+import { DisplayUserArticleComponent } from './pages/display-user-article/display-user-article.component';
+import { UsersArticlesListComponent } from './components/users-articles-list/users-articles-list.component';
+import { DisplayUsersArticlesComponent } from './pages/display-users-articles/display-users-articles.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { CategoriesComponent } from './categories/categories.component';
     PublishPageComponent,
     ContentEditableDirective,
     DropdownMenuComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    DisplayArticleComponent,
+    DisplayUserArticleComponent,
+    UsersArticlesListComponent,
+    DisplayUsersArticlesComponent
   ],
   imports: [
     BrowserModule,
