@@ -29,7 +29,9 @@
     [(contenteditableModel)]="publish.content">
     </div>
 
-
+    <div *ngIf="imageReceived == true">
+      <img [src]="showImage"/>
+    </div>
     <button class="btn" (click)="logger()">LOG</button>
 </div>
 

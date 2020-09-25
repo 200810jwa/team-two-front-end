@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {faPlusSquare} from '@fortawesome/free-solid-svg-icons';
 import { Article } from 'src/app/models/Article';
-
+import {UserArticle} from 'src/app/models/user-article';
 @Component({
   selector: 'app-article-form',
   templateUrl: './article-form.component.html',
@@ -12,7 +13,7 @@ export class ArticleFormComponent implements OnInit {
 
   plusSquare = faPlusSquare;
   publish = {
-    user: null,
+    user_id: null,
     title: "",
     description: "",
     image: null,
@@ -30,10 +31,13 @@ export class ArticleFormComponent implements OnInit {
 
   imageData;
   byteArray = [];
+  imageReceived = false;
+  showImage = null;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+
   }
 
   constructSixtyFourBit(file: File) {
@@ -58,15 +62,26 @@ export class ArticleFormComponent implements OnInit {
 
 
     async sendImage() {
-      this.publish.user = sessionStorage.getItem("CurrentUser");
-      this.publish.image = this.byteArray;
-      this.publish.publishedAt = Date();
-      this.publish.status = 2;
-      // let response = await this.http.post<Article>("localhost:8080/article", this.publish).toPromise();
+      try {
+        this.publish.user_id = JSON.parse(sessionStorage.getItem("currentUser")).user_id;
+        this.publish.image = this.byteArray;
+        this.publish.publishedAt = Date();
+        this.publish.status = 2;
+        let response = await this.http.post<UserArticle>("http://localhost:8080/Agora/article", this.publish).toPromise();
+        this.showImage ="data:image/png;base64," + response.image;
+        this.imageReceived = true;
+
+
+      } catch(error) {
+        console.log(error);
+      }
+
+
+
 
     }
   logger(){
-    console.log(this.publish);
+    this.sendImage();
   }
 
     // file: null;
