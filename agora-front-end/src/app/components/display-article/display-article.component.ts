@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserArticle } from 'src/app/models/user-article';
 
 @Component({
@@ -9,12 +9,13 @@ import { UserArticle } from 'src/app/models/user-article';
 })
 export class DisplayArticleComponent implements OnInit {
 
+  @Input() articleId: number;
+
   public title;
   public img;
   public content;
   public articleReceived;
-
-
+  
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -23,7 +24,7 @@ export class DisplayArticleComponent implements OnInit {
 
 
   async setUpArticle(){
-    let response = await this.http.get<UserArticle>("http://localhost:8080/Agora/article/29").toPromise();
+    let response = await this.http.get<UserArticle>("http://localhost:8080/Agora/article/" + this.articleId).toPromise();
 
     this.title = response.title;
     this.img = "data:image/png;base64," + response.image;

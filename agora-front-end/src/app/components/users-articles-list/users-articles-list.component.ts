@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Article } from 'src/app/models/Article';
 
 @Component({
@@ -11,7 +12,7 @@ export class UsersArticlesListComponent implements OnInit {
 
   public articles;
   public user_id;
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private router: Router) { 
     this.user_id = JSON.parse(sessionStorage.getItem("currentUser")).user_id;
   }
 
@@ -26,4 +27,12 @@ export class UsersArticlesListComponent implements OnInit {
 
   }
 
+  routeToArticle(article_id){
+    console.log(article_id);
+    this.router.navigateByUrl('/user_article', {
+      state: {
+        article_id: article_id,
+      }
+    });
+  }
 }
