@@ -28,6 +28,9 @@ export class LoginComponent implements OnInit {
 
       sessionStorage.setItem("currentUser", JSON.stringify(user));
       console.log(JSON.stringify(user));
+      this.username = '';
+      this.password = '';
+      location.reload();
       
     } catch(error) {
       console.log(error);

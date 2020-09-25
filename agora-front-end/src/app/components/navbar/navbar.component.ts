@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  bool: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
+
+    if (sessionStorage.currentUser) {
+      this.bool = true;
+      console.log(this.bool);
+    } else {
+      this.bool = false;
+      console.log(this.bool);
+    }
+
   }
 
 }

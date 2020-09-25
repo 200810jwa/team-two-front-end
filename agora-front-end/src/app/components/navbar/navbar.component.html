@@ -1,4 +1,4 @@
-<nav class="navbar bg-white navbar-sticky-top px-3 py-3 mb-5 bg-light custom">
+<nav class="navbar bg-white navbar-sticky-top px-3 py-3 bg-light custom">
   <div class="container">
   <a class="navbar-brand" href="/landing">
       <div class="box">
@@ -7,6 +7,7 @@
   </a>
     <!-- <h3  class="mb-0 d-inline">Agora</h3> -->
     <!-- <app-signup-link></app-signup-link> -->
-    <app-login-link></app-login-link>
+    <app-login-link *ngIf="!bool"></app-login-link>
+    <app-dropdown-menu *ngIf="bool"></app-dropdown-menu>
   </div>
 </nav>

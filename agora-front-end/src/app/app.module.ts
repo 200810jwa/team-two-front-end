@@ -19,6 +19,8 @@ import { ArticleFormComponent } from './components/article-form/article-form.com
 import { PublishPageComponent } from './pages/publish-page/publish-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ContentEditableDirective } from './directives/content-editable.directive';
+import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ContentEditableDirective } from './directives/content-editable.directiv
     ArticleListComponent,
     ArticleFormComponent,
     PublishPageComponent,
-    ContentEditableDirective
+    ContentEditableDirective,
+    DropdownMenuComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
