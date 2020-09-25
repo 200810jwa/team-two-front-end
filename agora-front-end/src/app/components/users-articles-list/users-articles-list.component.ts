@@ -12,12 +12,11 @@ export class UsersArticlesListComponent implements OnInit {
   public articles;
   public user_id;
   constructor(private http: HttpClient) { 
-    this.user_id = 22;
+    this.user_id = JSON.parse(sessionStorage.getItem("currentUser")).user_id;
   }
 
   ngOnInit(): void {
     this.getArticles();
-
   }
 
   async getArticles() {
