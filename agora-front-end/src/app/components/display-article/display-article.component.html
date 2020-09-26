@@ -1,7 +1,14 @@
-<div class="text-center" *ngIf="articleReceived">
-    <h1>{{this.title}}</h1>
-
-    <img [src]="this.img"/>
-
-    <p>{{this.content}}</p>
+<div class="article" *ngIf="articleReceived">
+    <div class="article-title text-center">
+         <h1>{{this.title}}</h1>
+    </div>
+   
+    <div class="article-image">
+        <img class="article-image" [src]="this.img"/>
+    </div>
+    
+    <div class="article-content">
+        <p>{{this.content}}</p>
+    </div>
 </div>
+

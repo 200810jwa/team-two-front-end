@@ -10,7 +10,7 @@ import {Location} from '@angular/common';
 export class DisplayUserArticleComponent implements OnInit {
   public articleId;
   constructor(private router: Router, private location: Location) { 
-    console.log("Inside Display User Article Page" + this.router.getCurrentNavigation().extras.state.article_id);
+    console.log("Inside Display User Article Page:" + this.router.getCurrentNavigation().extras.state.article_id);
     this.articleId = this.router.getCurrentNavigation().extras.state.article_id
   }
 

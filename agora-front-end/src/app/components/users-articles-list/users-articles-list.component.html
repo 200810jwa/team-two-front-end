@@ -1,6 +1,6 @@
 <h1>Your Articles</h1>
 <hr/>
-<div *ngFor="let article of articles">
+<div class="clickable-div" *ngFor="let article of articles">
     <a (click)="routeToArticle(article.article_id)">
         <h3>{{article.title}}</h3>
         <p>{{article.description}}</p>

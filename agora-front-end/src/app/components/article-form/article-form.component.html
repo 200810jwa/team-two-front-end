@@ -31,7 +31,12 @@
     <div *ngIf="imageReceived == true">
       <img [src]="showImage"/>
     </div>
-    <button class="btn" (click)="logger()">LOG</button>
+    <div class="row">
+      <div class="col-sm-2 offset-10">
+        <button class="btn float-right btn-outline-dark bottom-margin" (click)="submit()">Publish</button>
+      </div>
+    </div>
+    
 </div>
 
 
