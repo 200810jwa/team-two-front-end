@@ -1,35 +1,27 @@
-<div>
+<div class="mb-2">
+    <h2 class="mb-3">Register</h2>
     <form>
-        <div class="form-row">
-            <div class="col-sm-6">
-                <input class="form-control" type="text" placeholder="First Name" name="firstname" [(ngModel)]="firstname" > 
-            </div>
-            <div class="col-sm-6">
-                <input class="form-control" type="text" placeholder="Last Name" [(ngModel)]="lastname" name="lastname">
-            </div>
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input type="text" class="form-control" placeholder="First Name" id="firstname" name="firstname" [(ngModel)]="firstname">
         </div>
-        <div class="form-row">
-            <div class="col-sm-12">
-                <input class="form-control" type="text" placeholder="Username" [(ngModel)]="username" name="username">
-                </div>
-    
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" id="lastname" name="lastname" [(ngModel)]="lastname">
         </div>
-        <div class="form-row">
-            <div class="col-sm-12">
-                <input class="form-control" type="text" placeholder="Password" [(ngModel)]="password" name="password">
-            </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" placeholder="Username" id="username" name="username" [(ngModel)]="username">
         </div>
-    
-        <div class="form-row">
-            <div class="col-sm-12">
-                <input class="form-control" type="text" placeholder="Email" [(ngModel)]="email" name="email">
-            </div>
+        <div class="form-group mb-4">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" placeholder="Password" id="password" name="password" [(ngModel)]="password">
         </div>
-    </form>
-    <div>
-        <button type="button" class="toggleButton" class="btn secondary-button-color rounded-0" (click)='toggle()'>Already have Account? </button>
-    </div>
-    <div>
-        <button type="button" class="btn rounded-0 btn-outline-dark"(click)="submitForm()">Register</button>
-    </div>
+        <div class="form-group mb-4">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" placeholder="Email" id="email" name="email" [(ngModel)]="email">
+        </div>
+        <button type="button" class="btn rounded-0 secondary-button-color mr-3" (click)="toggle()">Already have Account?</button>
+        <button class="btn rounded-0 btn-outline-dark" type="submit" (click)="submitForm()">Register</button>
+      </form>
 </div>
