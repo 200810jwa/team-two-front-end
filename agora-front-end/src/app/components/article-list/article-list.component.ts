@@ -16,6 +16,16 @@ export class ArticleListComponent implements OnInit {
   middleMiddle: Article;
   middleBottom: Article;
   largeRight: Article;
+  largeLeft1: Article;
+  middleTop1: Article;
+  middleMiddle1: Article;
+  middleBottom1: Article;
+  largeRight1: Article;
+  largeLeft2: Article;
+  middleTop2: Article;
+  middleMiddle2: Article;
+  middleBottom2: Article;
+  largeRight2: Article;
   topStoriesResponse: TopHeadlinesResponse;
   articlesRecieved: boolean = false;
 
@@ -39,5 +49,15 @@ export class ArticleListComponent implements OnInit {
     this.middleMiddle = this.articleList[2];
     this.middleBottom = this.articleList[3];
     this.largeRight = this.articleList[4];
+    this.largeLeft1 = this.articleList[5];
+    this.middleTop1 = this.articleList[6];
+    this.middleMiddle1 = this.articleList[7];
+    this.middleBottom1 = this.articleList[8];
+    this.largeRight1 = this.articleList[9];
+    this.largeLeft2 = this.articleList[10];
+    this.middleTop2 = this.articleList[11];
+    this.middleMiddle2 = this.articleList[12];
+    this.middleBottom2 = this.articleList[13];
+    this.largeRight2 = this.articleList[14];
   }
 }
