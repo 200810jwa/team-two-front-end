@@ -7,6 +7,7 @@ import { PublishPageComponent } from './pages/publish-page/publish-page.componen
 import { DisplayUserArticleComponent } from './pages/display-user-article/display-user-article.component';
 import { UsersArticlesListComponent } from './components/users-articles-list/users-articles-list.component';
 import { DisplayUsersArticlesComponent } from './pages/display-users-articles/display-users-articles.component';
+import { DisplayQueryArticlesComponent } from './pages/display-query-articles/display-query-articles.component';
 const routes: Routes = [
   {
     path: 'landing',
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'users_articles',
     component: DisplayUsersArticlesComponent
+  },
+  {
+    path: 'query_articles',
+    component: DisplayQueryArticlesComponent
   },
   {
     path: '**',

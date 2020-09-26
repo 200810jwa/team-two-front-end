@@ -12,4 +12,9 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  categoryLink(queryParam) {
+    sessionStorage.setItem("queryParam", queryParam);
+    location.href = "http://localhost:4200/query_articles"
+  }
+
 }

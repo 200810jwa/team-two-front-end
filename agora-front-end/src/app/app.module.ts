@@ -25,6 +25,8 @@ import { DisplayArticleComponent } from './components/display-article/display-ar
 import { DisplayUserArticleComponent } from './pages/display-user-article/display-user-article.component';
 import { UsersArticlesListComponent } from './components/users-articles-list/users-articles-list.component';
 import { DisplayUsersArticlesComponent } from './pages/display-users-articles/display-users-articles.component';
+import { QueryArticlesListComponent } from './query-articles-list/query-articles-list.component';
+import { DisplayQueryArticlesComponent } from './pages/display-query-articles/display-query-articles.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { DisplayUsersArticlesComponent } from './pages/display-users-articles/di
     DisplayArticleComponent,
     DisplayUserArticleComponent,
     UsersArticlesListComponent,
-    DisplayUsersArticlesComponent
+    DisplayUsersArticlesComponent,
+    QueryArticlesListComponent,
+    DisplayQueryArticlesComponent
   ],
   imports: [
     BrowserModule,
