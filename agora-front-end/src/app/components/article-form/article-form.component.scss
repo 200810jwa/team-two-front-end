@@ -75,11 +75,14 @@ input:-webkit-autofill:active  {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1em;
-    padding-left: 15%;
-    margin-top: -5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 5%;
 }
 
-
+.bottom-margin {
+    margin-bottom: 100px;
+}
 // Half or more of this taken off of stack overflow
 .circle {
     justify-self: start;

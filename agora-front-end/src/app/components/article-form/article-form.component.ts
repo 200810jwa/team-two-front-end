@@ -54,7 +54,25 @@ export class ArticleFormComponent implements OnInit {
     }
 
 
-    logger(){
+    submit(){
+      if(this.publish.title == "") {
+        alert("Please provide a title");
+        return;
+      } 
+      if(this.displayImage == null) {
+        alert("Please provide an image");
+        return;
+      }
+      if(this.publish.description == "") {
+        alert("Please provide a description");
+        return;
+      }
+
+      if(this.publish.content == "") {
+        alert("Please provide content for your article");
+        return;
+      }
+
       this.sendImage();
     }
 
