@@ -1,13 +1,10 @@
 <div class="wrapper">
     <!-- <label for="article-image" class="custom-image-upload"><fa-icon [icon]="plusSquare"></fa-icon></label> -->
     
-    <div contentEditable="true" class="title-input text-cursor" placeholder="Title" name="title" type="text"
-      [(contenteditableModel)]="publish.title">
+    <div contentEditable="true" [ngClass]="{'title-input':true, 'text-cursor': true, 'missing-element': missingTitle }" placeholder="Title" name="title" type="text"
+      [(contenteditableModel)]="publish.title"></div>
 
-    </div>
-    <div contentEditable="true" placeholder="Description" class="description-input text-cursor"  name="description" type="text"
-    [(contenteditableModel)]="publish.description">
-    </div>
+    <div contentEditable="true" placeholder="Description" [ngClass]="{'description-input': true,  'text-cursor': true, 'missing-element': missingDescription}"  name="description" type="text" [(contenteditableModel)]="publish.description"></div>
 
     <div *ngIf="displayImage == null">
       <label for="article-image" class="custom-image-upload">
@@ -25,7 +22,7 @@
     </div>
 
 
-    <div contenteditable="true" placeholder="Lorem ipsum dolor..."class="content-input text-cursor"  name="content" type="text" [(contenteditableModel)]="publish.content">
+    <div contenteditable="true" placeholder="Lorem ipsum dolor..." [ngClass]="{'content-input': true, 'text-cursor': true, 'missing-element': missingContent}"  name="content" type="text" [(contenteditableModel)]="publish.content">
     </div>
 
     <div *ngIf="imageReceived == true">

@@ -117,3 +117,8 @@ input:-webkit-autofill:active  {
   .text-cursor:hover {
     cursor: text;
   }
+
+  .missing-element[contentEditable="true"]:empty:before{
+      content: attr(placeholder);
+      color: #e67171;
+  }

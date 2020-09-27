@@ -1,27 +1,31 @@
 <div class="mb-2">
     <h2 class="mb-3">Register</h2>
-    <form>
+    <form #registrationForm="ngForm" (ngSubmit)="submitForm()">
         <div class="form-group">
           <label for="firstname">First Name</label>
-          <input type="text" class="form-control" placeholder="First Name" id="firstname" name="firstname" [(ngModel)]="firstname">
+          <input type="text" class="form-control" placeholder="First Name" id="firstname" name="firstname" [(ngModel)]="firstname" required
+          #givenName="ngModel">
+          <small class="error-text" *ngIf="!givenName.valid && givenName.touched">
+            First Name is required
+            </small>
         </div>
         <div class="form-group">
             <label for="lastname">Last Name</label>
-            <input type="text" class="form-control" placeholder="Last Name" id="lastname" name="lastname" [(ngModel)]="lastname">
+            <input type="text" class="form-control" placeholder="Last Name" id="lastname" name="lastname" [(ngModel)]="lastname" required>
         </div>
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control" placeholder="Username" id="username" name="username" [(ngModel)]="username">
+            <input type="text" class="form-control" placeholder="Username" id="username" name="username" [(ngModel)]="username" required>
         </div>
         <div class="form-group mb-4">
             <label for="password">Password</label>
-            <input type="password" class="form-control" placeholder="Password" id="password" name="password" [(ngModel)]="password">
+            <input type="password" class="form-control" placeholder="Password" id="password" name="password" [(ngModel)]="password" required>
         </div>
         <div class="form-group mb-4">
             <label for="email">Email</label>
-            <input type="email" class="form-control" placeholder="Email" id="email" name="email" [(ngModel)]="email">
+            <input type="email" class="form-control" placeholder="Email" id="email" name="email" [(ngModel)]="email" required>
         </div>
         <button type="button" class="btn rounded-0 secondary-button-color mr-3" (click)="toggle()">Already have Account?</button>
-        <button class="btn rounded-0 btn-outline-dark" type="submit" (click)="submitForm()">Register</button>
+        <button [disabled]="!registrationForm.form.valid" class="btn rounded-0 btn-outline-dark" type="submit">Register</button>
       </form>
 </div>

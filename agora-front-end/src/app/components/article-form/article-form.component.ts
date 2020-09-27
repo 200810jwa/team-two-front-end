@@ -32,7 +32,9 @@ export class ArticleFormComponent implements OnInit {
   byteArray = [];
   imageReceived = false;
   showImage = null;
-
+  missingTitle = false;
+  missingDescription = false;
+  missingContent = false;
   displayImage;
 
   constructor(private http: HttpClient) { }
@@ -55,24 +57,28 @@ export class ArticleFormComponent implements OnInit {
 
 
     submit(){
-      if(this.publish.title == "") {
-        alert("Please provide a title");
+      if (this.publish.title == "") {
+        this.missingTitle = true;
         return;
-      } 
+      } else {
+        this.missingTitle = false;
+      }
       if(this.displayImage == null) {
         alert("Please provide an image");
         return;
-      }
+      } 
       if(this.publish.description == "") {
-        alert("Please provide a description");
+        this.missingDescription = true;
         return;
+      } else {
+       this.missingDescription = false; 
       }
-
       if(this.publish.content == "") {
-        alert("Please provide content for your article");
+        this.missingContent = true;
         return;
+      } else {
+        this.missingContent = false;
       }
-
       this.sendImage();
     }
 
