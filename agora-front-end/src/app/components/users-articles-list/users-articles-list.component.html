@@ -2,6 +2,7 @@
 <hr/>
 <div class="clickable-div" *ngFor="let article of articles">
     <a (click)="routeToArticle(article.article_id)">
+        <img class="w-25 mb-3" src="data:image/png;base64,{{article.image}}" alt="article image">
         <h3>{{article.title}}</h3>
         <p>{{article.description}}</p>
     </a>
