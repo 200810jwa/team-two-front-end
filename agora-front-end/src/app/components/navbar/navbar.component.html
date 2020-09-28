@@ -2,12 +2,12 @@
   <div class="container">
   <a class="navbar-brand" href="/landing">
       <div class="box">
-        <h2 class="inner-text">Agora</h2>
+        <h2 id="title-button" class="inner-text">Agora</h2>
       </div>
   </a>
     <!-- <h3  class="mb-0 d-inline">Agora</h3> -->
     <!-- <app-signup-link></app-signup-link> -->
     <app-login-link *ngIf="!bool"></app-login-link>
-    <app-dropdown-menu *ngIf="bool"></app-dropdown-menu>
+    <app-dropdown-menu id="dropdown-menu" *ngIf="bool"></app-dropdown-menu>
   </div>
 </nav>

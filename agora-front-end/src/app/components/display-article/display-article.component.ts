@@ -24,7 +24,7 @@ export class DisplayArticleComponent implements OnInit {
 
 
   async setUpArticle(){
-    let response = await this.http.get<UserArticle>("http://localhost:8080/Agora/article/" + this.articleId).toPromise();
+    let response = await this.http.get<UserArticle>("http://ec2-3-134-94-196.us-east-2.compute.amazonaws.com:8085/Agora/article/" + this.articleId).toPromise();
 
     this.title = response.title;
     this.img = "data:image/png;base64," + response.image;

@@ -48,7 +48,7 @@ export class ArticleFormComponent implements OnInit {
         this.publish.image = this.displayImage.split(",")[1];
         this.publish.publishedAt = Date();
         this.publish.status = 2;
-        let response = await this.http.post<UserArticle>("http://localhost:8080/Agora/article", this.publish).toPromise();
+        let response = await this.http.post<UserArticle>("http://ec2-3-134-94-196.us-east-2.compute.amazonaws.com:8085/Agora/article", this.publish).toPromise();
         console.log(response);
       } catch(error) {
         console.log(error);

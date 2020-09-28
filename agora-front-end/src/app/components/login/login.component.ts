@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
 
   public username: string;
   public password: string;
+
+  public nonExistentUsername;
   constructor(private http: HttpClient, private toggler: ToggleService) { }
 
   ngOnInit(): void {
@@ -20,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   async submitForm() {
     try{
-      let user = await this.http.post<User>('http://localhost:8080/Agora/user/login', {
+      let user = await this.http.post<User>('http://ec2-3-134-94-196.us-east-2.compute.amazonaws.com:8085/Agora/user/login', {
         userName: this.username,
         password: this.password
       }
@@ -33,7 +35,11 @@ export class LoginComponent implements OnInit {
       location.reload();
       
     } catch(error) {
-      console.log(error);
+      console.log(error.status);
+
+      if(error.status == 450) {
+        this.nonExistentUsername = true;
+      }
     }
   }
 

@@ -21,7 +21,7 @@ export class UsersArticlesListComponent implements OnInit {
   }
 
   async getArticles() {
-    let response = await this.http.get<Article[]>("http://localhost:8080/Agora/user/" + this.user_id + "/articles").toPromise();
+    let response = await this.http.get<Article[]>("http://ec2-3-134-94-196.us-east-2.compute.amazonaws.com:8085/Agora/user/" + this.user_id + "/articles").toPromise();
 
     this.articles = response;
 

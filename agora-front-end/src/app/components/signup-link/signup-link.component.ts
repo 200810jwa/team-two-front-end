@@ -24,7 +24,7 @@ export class SignupLinkComponent implements OnInit {
 
   async submitForm() {
     try{
-      let user = await this.http.post<User>('http://localhost:8080/Agora/user', {
+      let user = await this.http.post<User>('http://ec2-3-134-94-196.us-east-2.compute.amazonaws.com:8085/Agora/user', {
         userName: this.username,
         firstName: this.firstname,
         lastName: this.lastname,
